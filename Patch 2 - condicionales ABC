@@ -1,0 +1,80 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int referencia,costo,precio,utilidad,cantidad;
+    float porcentaje_U;
+    char descrip[80];
+    char talla[20];
+    char disponibilidad, tipo;
+  
+
+    std::cout<<"BIENVENIDO A SOFIA SHOES SHOP"<<"\n"<<endl;
+
+    std::cout<< "Digite la Referencia del producto" << endl;
+    cin>>referencia;
+    cin.ignore(256, '\n');
+  
+    std::cout<< "Digite la Descipción corta del producto"<<endl;
+    cin.getline(descrip,80);
+    //cin.ignore(256, '\n');
+  
+    std::cout << "Digite la Talla del producto" <<endl;  
+    cin.getline(talla,20);
+
+    std::cout << "¿está disponible? (S/N)" <<endl;  
+    cin>>disponibilidad;
+
+    std::cout<<"Digite el Costo unitario del producto" << endl;
+    cin>>costo;
+    
+    std::cout<<"Digite el precio unidad en venta del producto"<<endl;
+    cin>>precio;
+  std::cout<<"Digite la cantidad de unidades del producto"<<endl;
+    cin>>cantidad;
+
+  //Agrego el valor de las siguientes variables para dar uso de sus nombres, aunque podría poner la formula de la solucion directamente en el cout;
+    utilidad = (precio-costo);
+    porcentaje_U = 100/(precio/utilidad);
+
+  
+      
+    system("cls");
+    
+    std::cout<<"LOS DATOS REGISTRADOS SON LOS SIGUIENTES"<<"\n"<<endl;
+    std::cout<<"REFERENCIA: " <<referencia<<endl;
+  if(costo<= 30000){
+    std::cout<<"TIPO: A"<<endl;
+    porcentaje_U = 50;
+    }
+    if(costo>30000 && costo<=60000){
+    std::cout<<"TIPO: B"<<endl;
+    porcentaje_U = 40;
+    }
+    if(costo>60000){
+    std::cout<<"TIPO: C"<<endl;
+    porcentaje_U = 30;
+    }
+
+  
+    std::cout<<"DESCRIPCIÓN: " <<descrip<<endl;
+    std::cout<<"TALLA: " <<talla<<endl;
+    std::cout<<"DISPONIBLE: " <<disponibilidad<<endl;
+    std::cout<<"CANTIDAD: " <<cantidad<<endl;
+    std::cout<<"COSTO UNIDAD: " <<costo<<endl;
+    std::cout<<"COSTO TOTAL: " <<(costo*cantidad)<<endl;
+    std::cout<<"PRECIO UNIDAD: " <<precio<<endl;
+    std::cout<<"PRECIO TOTAL : " <<(precio*cantidad)<<endl;
+    std::cout<<"UTILIDAD POR UNIDAD: " <<utilidad<<endl;
+    std::cout<<"UTILIDAD TOTAL: " <<(utilidad*cantidad)<<endl;
+    std::cout<<"PORCENTAJE DE UTILIDAD: " <<(porcentaje_U)<<"%"<<endl;
+  
+    std::cout<<"DESARROLLADO POR: Juan David Niño";
+    
+    system("pause");
+    
+    return EXIT_SUCCESS;
+    
+}
